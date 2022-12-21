@@ -23,7 +23,7 @@ def get_quote(
         raise TypeError(f"`amount` must be an integer. You passed a {amount.__class__.__name__}")
 
     # get the fee + the buy amount after fee
-    quote_params = {"sellToken": sell_token, "buyToken": buy_token, "sellAmountBeforeFee": Decimal(amount)}
+    quote_params = {"sellToken": str(sell_token), "buyToken": str(buy_token), "sellAmountBeforeFee": Decimal(amount)}
     r = requests.get(QUOTE_URL, params=quote_params)  # type: ignore
 
     # If request failed, raise appropriate Exception
