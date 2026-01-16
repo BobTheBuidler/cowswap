@@ -1,5 +1,6 @@
 .eggs/
 .mypy_cache/
+.worktrees
 build/
 dist/
 env/
